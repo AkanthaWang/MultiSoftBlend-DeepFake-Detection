@@ -1,6 +1,6 @@
 # MultiSoftBlend-DeepFake-Detection
 ***
-This repository contains the official PyTorch implementation for MultiSoftBlend Deepfake Detection.
+This repository contains the official PyTorch implementation for MultiSoftBlend-Deepfake-Detection.
 ***
 ## Requirements
 + adan==0.0.2
