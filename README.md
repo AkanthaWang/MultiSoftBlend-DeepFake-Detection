@@ -1,2 +1,14 @@
 # MultiSoftBlend-DeepFake-Detection
-由于不同伪造方法生成的样本之间的数据分布存在较大差异，现有人脸伪造方法准确性不高，泛化性较差。为了解 决上述问题，提出一种多元软混合样本驱动的图文对齐人脸伪造检测新方法，充分利用图像与文本的多模态信息对齐，捕捉微弱的人脸伪造痕迹。
+***
+This repository contains the official PyTorch implementation for MoE-FFD.
+***
+## Requirements
++ adan==0.0.2
++ albumentations==1.3.1
++ torch==2.0.1
++ torchvision==0.15.2
++ numpy==1.26.3
++ scikit-learn==1.5.1
+## Train
+
+## Evaluate
