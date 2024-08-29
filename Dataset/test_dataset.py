@@ -339,8 +339,8 @@ def RandomReplace(src, tar, src_mask, flag=0):  # 0 easy; 1 simple; 2 hard
 class VideoCDF(data.Dataset):
     def __init__(self,image_size=384) -> None:
         super().__init__()
-        idx_root = '/home/liu/wsy/Data/Dataset/VideoCDF/idx'
-        txt_root = '/home/liu/wsy/Data/Dataset/VideoCDF/all.txt'
+        idx_root = '/path/Dataset/VideoCDF/idx'
+        txt_root = '/path/Dataset/VideoCDF/all.txt'
         allData = np.loadtxt(txt_root, dtype='str', delimiter='\t')
 
         self.video_list = []
@@ -428,8 +428,8 @@ class RandomDownScale(alb.core.transforms_interface.ImageOnlyTransform):
 class VideoDFDC(data.Dataset):
     def __init__(self,image_size = 384) -> None:
         super().__init__()
-        idx_root = '/home/liu/wsy/Data/Dataset/VideoDFDC/idx'
-        txt_root = '/home/liu/wsy/Data/Dataset/VideoDFDC/all.txt'
+        idx_root = '/path/Dataset/VideoDFDC/idx'
+        txt_root = '/path/Dataset/VideoDFDC/all.txt'
         allData = np.loadtxt(txt_root, dtype='str', delimiter='\t')
         
         self.video_list = []
@@ -496,8 +496,8 @@ class VideoDFDC(data.Dataset):
 class VideoDFDCP(data.Dataset):
     def __init__(self,image_size=384) -> None:
         super().__init__()
-        root = '/home/liu/wsy/Data/Dataset/VideoDFDCP'
-        txt_root = '/home/liu/wsy/Data/Dataset/VideoDFDCP/all.txt'
+        root = '/path/Dataset/VideoDFDCP'
+        txt_root = '/path/Dataset/VideoDFDCP/all.txt'
         allData = np.loadtxt(txt_root, dtype='str', delimiter='\t')
         self.video_list = []
         self.target_list = []
@@ -546,8 +546,8 @@ class VideoDFDCP(data.Dataset):
 class VideoDFV1(data.Dataset):
     def __init__(self,image_size = 384) -> None:
         super().__init__()
-        root = '/home/liu/wsy/Data/Dataset/VideoDFV1'
-        txt_root = '/home/liu/wsy/Data/Dataset/VideoDFV1/all.txt'
+        root = '/path/Dataset/VideoDFV1'
+        txt_root = '/path/Dataset/VideoDFV1/all.txt'
         allData = np.loadtxt(txt_root, dtype='str', delimiter='\t')
         self.video_list = []
         self.target_list = []
@@ -592,8 +592,8 @@ class VideoDFV1(data.Dataset):
 class VideoDFD(data.Dataset):
     def __init__(self, image_size = 384) -> None:
         super().__init__()
-        root = '/home/liu/wsy/Data/Dataset/VideoDFD'
-        txt_root = '/home/liu/wsy/Data/Dataset/VideoDFD/all.txt'
+        root = '/path/Dataset/VideoDFD'
+        txt_root = '/path/Dataset/VideoDFD/all.txt'
         allData = np.loadtxt(txt_root, dtype='str', delimiter='\t')
         
         self.video_list = []
@@ -637,7 +637,7 @@ class VideoDFD(data.Dataset):
         target = torch.tensor(target).unsqueeze(0)
         return video, target
 
-def Get_DataLoader(dataset_name="forgery_detect", root='/root/fcb1/dataset/forgery_detect', mode='train', image_size = 384, bz=1,
+def Get_DataLoader(dataset_name="forgery_detect", root='/path/forgery_detect', mode='train', image_size = 384, bz=1,
                    shuffle=False):
     if dataset_name =="VideoCDF":
         dataset = VideoCDF( image_size = image_size)
