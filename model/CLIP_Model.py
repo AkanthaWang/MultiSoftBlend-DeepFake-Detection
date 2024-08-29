@@ -456,7 +456,7 @@ class Face_Clip(nn.Module):
 if __name__ == '__main__':
     from CLIP import clip
     clip_model, preprocess = clip.load("ViT-B/16", \
-    device=torch.device("cpu"), download_root="../model2/clip_model")#ViT-B/16
+    device=torch.device("cpu"), download_root="../model/clip_model")#ViT-B/16
     length_prompt = 16
     x = torch.randn([2, 3, 224, 224]).cuda()
     model = Face_Clip(clip_model)
