@@ -6,7 +6,7 @@ import torch.optim as optim
 import numpy as np
 
 import sys, os
-from ..Dataset.FFPP_aug_dataset import FFPP_Dataset
+from Dataset.FFPP_aug_dataset import FFPP_Dataset
 
 import random
 import time
@@ -120,7 +120,7 @@ step2 = 0
 step_v = 0
 
 device = torch.device('cuda')
-writer = SummaryWriter('/home/liu/wsy/Log/log/2024-3-29')
+writer = SummaryWriter('/path/')
 gc.collect()
 torch.cuda.empty_cache()
 print("Let's start training!")
@@ -181,7 +181,7 @@ for e in range(0, Epoch):
     if best_auc < cdfauc:
         best_auc = cdfauc
         torch.save(model.state_dict(
-        ), f'/home/liu/wsy/Model/clip/weight/Face_clip_soft_learnable_Epoch{e}_cdf{cdfauc:.4f}.pth')
+        ), f'/path/model/model_weight/Face_clip_soft_learnable_Epoch{e}_cdf{cdfauc:.4f}.pth')
     writer.add_scalar('test/AUC', cdfauc, e)
     end = time.time()
     print(f"epoch: {e} end ; cost time: {(end - start)/60.:.4f} min")
