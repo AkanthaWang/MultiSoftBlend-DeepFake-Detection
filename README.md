@@ -10,5 +10,10 @@ This repository contains the official PyTorch implementation for MultiSoftBlend-
 + numpy==1.26.3
 + scikit-learn==1.5.1
 ## Train
-
+```python
+python trainer.py
+```
 ## Evaluate
+```python
+python test.py
+```
