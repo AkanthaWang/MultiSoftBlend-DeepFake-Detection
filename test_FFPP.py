@@ -6,7 +6,7 @@ import torch.optim as optim
 import numpy as np
 
 import sys, os
-from ..Dataset.FFPP_aug_dataset import FFPP_Dataset
+from Dataset.FFPP_aug_dataset import FFPP_Dataset
 
 
 import random
@@ -70,7 +70,7 @@ clip_model, preprocess = clip.load("ViT-B/16", \
 model = Face_Clip(clip_model).cuda()
 check = True
 if check:
-    wp = '../weight/Face_clip_soft_learnable_Epoch162.pth'
+    wp = '../model/model_weight/Face_clip_soft_learnable_Epoch162.pth'
     model.load_state_dict(torch.load(wp)) 
     print('parameters inherited from ', wp)
     
