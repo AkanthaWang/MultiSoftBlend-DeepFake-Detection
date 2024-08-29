@@ -162,11 +162,11 @@ def init_fff(phase, dataset_paths, DF, NT, FS, FF, n_frames=8):
 class FFPP_Dataset(Dataset):
     def __init__(self,compress='raw',image_size=256, phase = "train", tamper="all"):# raw、c23、c40
         super().__init__()
-        self.original_root = f'/home/liu/wsy/Data/Dataset/FFPPDataset/original_sequences/{compress}/images/'
-        self.Deepfakes_root = f'/home/liu/wsy/Data/Dataset/FFPPDataset/manipulated_sequences/Deepfakes/{compress}/images/'
-        self.NeuralTextures_root = f'/home/liu/wsy/Data/Dataset/FFPPDataset/manipulated_sequences/NeuralTextures/{compress}/images/'
-        self.FaseSwap_root = f'/home/liu/wsy/Data/Dataset/FFPPDataset/manipulated_sequences/FaceSwap/{compress}/images/'
-        self.Face2Face_root = f'/home/liu/wsy/Data/Dataset/FFPPDataset/manipulated_sequences/Face2Face/{compress}/images/'
+        self.original_root = f'/path/FFPPDataset/original_sequences/{compress}/images/'
+        self.Deepfakes_root = f'/path/FFPPDataset/manipulated_sequences/Deepfakes/{compress}/images/'
+        self.NeuralTextures_root = f'/path/FFPPDataset/manipulated_sequences/NeuralTextures/{compress}/images/'
+        self.FaseSwap_root = f'/path/FFPPDataset/manipulated_sequences/FaceSwap/{compress}/images/'
+        self.Face2Face_root = f'/path/FFPPDataset/manipulated_sequences/Face2Face/{compress}/images/'
         print('start')
         st = time.time()
         original_list,Deepfakes_list,NeuralTextures_list,FaseSwap_list,Face2Face_list,landmark_list = init_fff(phase=phase,
@@ -208,7 +208,7 @@ class FFPP_Dataset(Dataset):
         # self.compress = compress
         self.img_size = image_size
         
-        self.landmark_root = "/home/liu/wsy/Data/Dataset/FFPP_16/landmarks/"
+        self.landmark_root = "/path/FFPP_16/landmarks/"
         self.real_root = self.original_root
         self.augmentation = self.get_transforms()
         self.augmentation2 = alb.ImageCompression(quality_lower=40,quality_upper=100,p=0.2)
