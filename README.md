@@ -17,3 +17,11 @@ python trainer.py
 ```python
 python test.py
 ```
+## inference
+
+上传一张图像进行测试
+
+```python
+python test_one_image.py
+```
+
