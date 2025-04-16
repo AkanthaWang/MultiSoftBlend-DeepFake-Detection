@@ -17,7 +17,7 @@ python trainer.py
 ```python
 python test.py
 ```
-## inference
+## Inference
 
 上传一张图像进行测试
 
