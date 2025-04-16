@@ -86,10 +86,10 @@ criterion_dict['l1'] = nn.L1Loss().cuda()
 lr = 2e-5 
 wd = 5e-3 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-from CLIP import clip
-from CLIP_Model import Face_Clip
+from model.CLIP import clip
+from model.CLIP_Model import Face_Clip
 clip_model, preprocess = clip.load("ViT-B/16", \
-    device=torch.device("cpu"), download_root="../model/clip/clip_model")#ViT-B/16
+    device=torch.device("cpu"), download_root="../model/pretrained_clip_weight")#ViT-B/16
 model = Face_Clip(clip_model).cuda()
 
 best_auc = 0.0

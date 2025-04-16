@@ -63,14 +63,14 @@ print('length of TestSet is ', test_len)
 lr = 2e-5
 wd = 5e-3
 device = "cuda" if torch.cuda.is_available() else "cpu"
-from CLIP import clip
-from CLIP_Model import Face_Clip
+from model.CLIP import clip
+from model.CLIP_Model import Face_Clip
 clip_model, preprocess = clip.load("ViT-B/16", \
-    device=torch.device("cpu"), download_root="../model/clip/clip_model")#ViT-B/16
+    device=torch.device("cpu"), download_root="../model/pretrained_clip_weight")#ViT-B/16
 model = Face_Clip(clip_model).cuda()
 check = True
 if check:
-    wp = '../model/model_weight/Face_clip_soft_learnable_Epoch162.pth'
+    wp = '../weight/Face_clip_soft_learnable_Epoch162.pth'
     model.load_state_dict(torch.load(wp)) 
     print('parameters inherited from ', wp)
     

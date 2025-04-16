@@ -1,1 +1,0 @@
-upload clip‘s weight
